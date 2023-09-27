@@ -19,8 +19,9 @@ ENV BERT_PREP_WORKING_DIR /workspace/bert/data
 WORKDIR /workspace
 
 WORKDIR /workspace/bert
-RUN pip install --no-cache-dir \
+RUN pip install -U --no-cache-dir \
  tqdm boto3 requests six ipdb h5py nltk progressbar onnxruntime==1.12.0 tokenizers>=0.7\
+ pyopenssl cryptography \
  git+https://github.com/NVIDIA/dllogger wget
 
 RUN apt-get install -y iputils-ping
